@@ -24,6 +24,9 @@ defaultEntryPoints = ["http", "https"]
     CipherSuites = ["TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"]
   [entryPoints.monitor]
   address = ":8081"
+  [[entryPoints.https.tls.certificates]]
+      certFile = "/etc/traefik/certs/degoos.xyz.crt"
+      keyFile = "/etc/traefik/certs/degoos.xyz.key"
 
 [retry]
 
